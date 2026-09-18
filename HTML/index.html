@@ -1,0 +1,194 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Lounge — Démo</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #090909;
+            color: #fff;
+        }
+        header {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: #111;
+            border-bottom: 1px solid #292929;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .logo span { color: #11ff58; }
+        nav { display: flex; gap: 28px; }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        nav a:hover { color: #d820ff; }
+
+        .hero {
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                    radial-gradient(circle at center, #30230d 0%, #15110a 35%, #090909 75%);
+        }
+        .hero-content { max-width: 750px; }
+        .badge {
+            display: inline-block;
+            border: 1px solid #d820ff;
+            color: #d820ff;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        h1 {
+            font-size: clamp(42px, 7vw, 76px);
+            margin-bottom: 18px;
+        }
+        h1 span { color: #d820ff; }
+        .hero p {
+            color: #bbb;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 6px;
+            background: #11ff58;
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 55px 7%;
+            background: #0f0f0f;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 30px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        .card {
+            min-height: 190px;
+            padding: 28px;
+            border: 1px solid #292929;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #191919, #101010);
+            text-align: center;
+        }
+        .icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .card h3 { margin-bottom: 10px; }
+        .card p { color: #999; line-height: 1.5; }
+
+        .notice {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 18px;
+            border-left: 3px solid #11ff58;
+            background: #171717;
+            color: #aaa;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        footer {
+            padding: 30px 7%;
+            text-align: center;
+            color: #777;
+            background: #090909;
+            border-top: 1px solid #222;
+            font-size: 13px;
+        }
+
+        @media (max-width: 750px) {
+            nav { display: none; }
+            .cards { grid-template-columns: 1fr; }
+            header { padding: 0 5%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">Site <span>APACHE</span></div>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#univers">Univers</a>
+        <a href="#apropos">À propos</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <div class="badge">Test 1</div>
+            <h1>Bienvenue sur <span>le site test apache</span></h1>
+            <p>
+                oui
+            </p>
+            <a class="button" href="#univers">À découvert</a>
+        </div>
+    </section>
+
+    <section class="section" id="univers">
+        <h2>Univers inspiré de l'addiction</h2>
+
+        <div class="cards">
+            <article class="card">
+                <div class="icon">♠</div>
+                <h3>Cartes</h3>
+                <p>Des cartes des cartes et des cartes.</p>
+            </article>
+
+            <article class="card">
+                <div class="icon">♦</div>
+                <h3>Design plus plus</h3>
+            </article>
+
+            <article class="card">
+                <div class="icon">♣</div>
+                <h3>Divertissement</h3>
+                <p>Viva la vida</p>
+            </article>
+        </div>
+
+        <div class="notice">
+            Cette page est une maquette fictive. Elle ne propose aucun jeu d'argent,
+            aucune mise, aucun dépôt et aucun système de paiement.
+        </div>
+    </section>
+</main>
+
+<footer id="apropos">
+    © 2026 Victor L
+</footer>
+
+</body>
+</html>
