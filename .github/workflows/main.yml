@@ -28,7 +28,6 @@ jobs:
   build-and-push-docker-image:
     needs: test-backend
     # run only when code is compiling and tests are passing
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-24.04
 
     # steps to perform in job
@@ -36,25 +35,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Login to DockerHub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+
       - name: Build image and push backend
         uses: docker/build-push-action@v6
         with:
           # relative path to the place where source code with Dockerfile is located
           context: ./TP1/simpleapi
-          push : false
           # Note: tags has to be all lower-case
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp1-backend:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push database
         uses: docker/build-push-action@v6
         with:
           context: ./TP1/database
-          push : false
           tags: ${{secrets.DOCKERHUB_USERNAME}}/tp1-database:latest
+          push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build image and push httpd
         uses: docker/build-push-action@v6
         with:
           context: ./TP1/HTML
-          push: false
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/tp1-httpd:latest
+          push: ${{ github.ref == 'refs/heads/main' }}

@@ -17,4 +17,7 @@ pipeline. On peut aussi le changer ou le révoquer sans toucher au code.
 Question 3
 
 
-Par défaut, les jobs s'exécutent en parallèle. Sans needs, la construction des images démarrerait en même temps que les tests, et on pourrait livrer une image d'une version dont les tests échouent. Avec needs, le job de livraison attend la fin du job de tests et ne se lance que s'il a réussi : si un test casse, rien n'est construit ni publié. Seul du code testé arrive donc en livraison, c'est le principe d'un pipeline CI/CD.
+Par défaut, les jobs s'exécutent en parallèle. Sans needs, la construction des images démarrerait en même temps que 
+les tests, et on pourrait livrer une image d'une version dont les tests échouent. Avec needs, le job de livraison
+attend la fin du job de tests et ne se lance que s'il a réussi : si un test casse, rien n'est construit ni publié. 
+Seul du code testé arrive donc en livraison.
