@@ -2,6 +2,7 @@
 services:
   backend:
     build: simpleapi
+    image : victorliy/tp1-backend:1.0
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/${POSTGRES_DB}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
@@ -21,6 +22,7 @@ services:
 
   database:
     build: database
+    image : victorliy/tp1-database:1.0
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
@@ -38,6 +40,7 @@ services:
 
   httpd:
     build: HTML
+    image: victorliy/tp1-frontend:1.0
     restart: unless-stopped
     ports:
       - "80:80"
