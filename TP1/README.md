@@ -233,3 +233,24 @@ Pour tester l'API :
 curl http://localhost/department
 curl http://localhost/students
 ```
+
+Question 9
+
+## Publication sur Docker Hub
+```bash
+docker login
+docker tag tp1-database victorliy/tp1-database:1.0
+docker tag tp1-backend  victorliy/tp1-backend:1.0
+docker tag tp1-httpd    victorliy/tp1-httpd:1.0
+docker push victorliy/tp1-database:1.0
+docker push victorliy/tp1-backend:1.0
+docker push victorliy/tp1-httpd:1.0
+```
+
+| Image | Rôle | Port |
+|---|---|---|
+| `victorliy/tp1-database:1.0` | PostgreSQL 17 avec scripts d'initialisation | 5432 (interne) |
+| `victorliy/tp1-backend:1.0` | API Spring Boot | 8080 (interne) |
+| `victorliy/tp1-httpd:1.0` | Apache, reverse proxy | 80 |
+
+Lien : https://hub.docker.com/u/victorliy
