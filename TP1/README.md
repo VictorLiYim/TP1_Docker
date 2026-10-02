@@ -254,3 +254,12 @@ docker push victorliy/tp1-httpd:1.0
 | `victorliy/tp1-httpd:1.0` | Apache, reverse proxy | 80 |
 
 Lien : https://hub.docker.com/u/victorliy
+
+Question 10
+
+Un registre en ligne rend les images accessibles de partout : un collègue ou un serveur peut les récupérer avec docker
+pull sans avoir le code source ni reconstruire l'image. Cela garantit que tout le monde exécute exactement la même 
+image, avec une version identifiée par un tag (1.0, 1.1), et permet de revenir à une version précédente si besoin. C'est
+aussi la base du déploiement : les serveurs de production et les pipelines CI/CD tirent les images depuis le registre. 
+Enfin, il sert de sauvegarde et de point de partage central, avec la possibilité de limiter l'accès (dépôts privés, 
+registre auto-hébergé en entreprise).
