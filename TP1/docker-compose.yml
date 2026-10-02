@@ -1,7 +1,7 @@
 # Application 3-tiers : httpd (reverse proxy) -> backend (API) -> database (PostgreSQL)
 services:
   backend:
-    build: ./simpleapi
+    build: simpleapi
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/${POSTGRES_DB}
       SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
@@ -37,7 +37,7 @@ services:
       retries: 10
 
   httpd:
-    build: ./HTML
+    build: HTML
     restart: unless-stopped
     ports:
       - "80:80"
